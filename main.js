@@ -13,6 +13,7 @@ function getCharacters(done) {
 
 getCharacters(data => {
     
+    console.log(data)
     data.results.forEach(personaje => {
 
         const div = document.createElement("div");
@@ -24,9 +25,9 @@ getCharacters(data => {
                 <h2 class="h2">${personaje.name}</h2>
                 <div class="container-species">
                     <small class="alive">${personaje.status} -</small>
-                    <small class="alive">Human</small>
+                    <small class="alive">${personaje.species}</small>
                 </div>
-                <h3 class="place">Earth</h3>
+                <h3 class="place">${personaje.location.name}</h3>
             </div>
         </div>
         `
